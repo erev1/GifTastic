@@ -1,0 +1,17 @@
+div{
+	margin: 10px
+}
+
+button {
+	margin: 5px;
+}
+
+p {
+	display: inline-block;
+	width: 200px;
+	margin: 10px;
+}
+
+#add-gif {
+	margin-top: 7px;
+}
