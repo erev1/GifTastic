@@ -6,13 +6,18 @@ function renderButtons() {
   $("#button-div").empty()
 
   for (var i=0; i < buttonArray.length; i++){
-  	var newButton = $('<button class="btn btn-primary">')
-  	newButton.attr("id", buttonArray[i])
-  	newButton.addClass("gifButton")
-  	newButton.text(buttonArray[i])
-  	$("#button-div").append(newButton)
+    
+  	$("#button-div").append(makeButton(buttonArray[i]))
   }
 
+}
+
+function makeButton(name) {
+    var newButton = $('<button class="btn btn-primary">')
+    newButton.attr("id", name)
+    newButton.addClass("gifButton")
+    newButton.text(name)
+    return newButton
 }
 
 renderButtons()
@@ -61,8 +66,9 @@ $("#add-gif").on("click", function(event) {
   // The movie from the textbox is then added to our array
   buttonArray.push(gif);
 
+  $("#button-div").append(makeButton(gif))
   // Calling renderButtons which handles the processing of our movie array
-  renderButtons();
+  
   $('#gif-input').val('')
 
 });
